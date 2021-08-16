@@ -9,8 +9,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "dev:ssr": "ng run mystore:serve-ssr",
-    "serve:ssr": "node dist/mystore/server/main.js",
+    "serve:ssr": "cross-env NODE_TLS_REJECT_UNAUTHORIZED=0 node --inspect-brk dist/mystore/server/main.js",
     "build:ssr": "ng build --prod && ng run mystore:server:production",
+    "build:ssrdev": "ng build && ng run mystore:server",
     "prerender": "ng run mystore:prerender"
   },
   "private": true,
