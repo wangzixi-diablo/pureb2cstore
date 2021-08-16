@@ -6,6 +6,11 @@ import { StoreModule } from "@ngrx/store";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SpartacusModule } from './spartacus/spartacus.module';
+import { ConfigModule, Config } from '@spartacus/core';
+import { UserAccountModule } from '@spartacus/user';
+export abstract class DebugConfig {
+  logConfig: boolean;
+}
 
 @NgModule({
   declarations: [
@@ -18,9 +23,19 @@ import { SpartacusModule } from './spartacus/spartacus.module';
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     SpartacusModule,
-    BrowserTransferStateModule
+    BrowserTransferStateModule,
+    ConfigModule.withConfig({
+      logConfig: true
+    } as DebugConfig
+    ),
+    UserAccountModule
   ],
-  providers: [],
+  providers: [{ provide: DebugConfig, useExisting: Config }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(private config: DebugConfig){
+    console.log('Jerry config: ', this.config);
+  }
+
+}
