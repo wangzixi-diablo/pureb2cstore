@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { SpartacusModule } from './spartacus/spartacus.module';
 import { ConfigModule, Config } from '@spartacus/core';
 import { UserAccountModule } from '@spartacus/user';
+import { ExtLoginComponent } from './loginExtension/extLogin.component';
+import { ExtLoginModule } from './loginExtension/extLogin.module';
 export abstract class DebugConfig {
   logConfig: boolean;
 }
@@ -28,9 +30,11 @@ export abstract class DebugConfig {
       logConfig: true
     } as DebugConfig
     ),
-    UserAccountModule
+    UserAccountModule,
+    ExtLoginModule
   ],
-  providers: [{ provide: DebugConfig, useExisting: Config }],
+  providers: [{ provide: DebugConfig, useExisting: Config }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
