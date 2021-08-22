@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { AnonymousConsentsModule, AuthModule, CartModule, CartOccModule, CheckoutModule, CheckoutOccModule, CostCenterOccModule, ExternalRoutesModule, ProductModule, ProductOccModule, UserOccTransitionalModule, UserTransitionalModule } from "@spartacus/core";
 import { AddressBookModule, AnonymousConsentManagementBannerModule, AnonymousConsentsDialogModule, BannerCarouselModule, BannerModule, BreadcrumbModule, CartComponentModule, CartPageEventModule, CategoryNavigationModule, CheckoutComponentModule, CheckoutLoginModule, CmsParagraphModule, ConsentManagementModule, FooterNavigationModule, HamburgerMenuModule, HomePageEventModule, LinkModule, LoginRouteModule, LogoutModule, MyCouponsModule, MyInterestsModule, NavigationEventModule, NavigationModule, NotificationPreferenceModule, OrderCancellationModule, OrderConfirmationModule, OrderDetailsModule, OrderHistoryModule, OrderReturnModule, PaymentMethodsModule, ProductCarouselModule, ProductDetailsPageModule, ProductFacetNavigationModule, ProductImagesModule, ProductIntroModule, ProductListingPageModule, ProductListModule, ProductPageEventModule, ProductReferencesModule, ProductSummaryModule, ProductTabsModule, ReplenishmentOrderConfirmationModule, ReplenishmentOrderDetailsModule, ReplenishmentOrderHistoryModule, ReturnRequestDetailModule, ReturnRequestListModule, SearchBoxModule, SiteContextSelectorModule, StockNotificationModule, TabParagraphContainerModule, WishListModule } from "@spartacus/storefront";
+import { UserFeatureModule } from '../user/user.feature.module';
 
 @NgModule({
   declarations: [],
@@ -81,6 +82,7 @@ import { AddressBookModule, AnonymousConsentManagementBannerModule, AnonymousCon
     HomePageEventModule,
     CartPageEventModule,
     ProductPageEventModule,
+    UserFeatureModule,
     // External routes,
     ExternalRoutesModule.forRoot(),
   ]

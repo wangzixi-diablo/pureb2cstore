@@ -8,8 +8,9 @@ import { AppComponent } from './app.component';
 import { SpartacusModule } from './spartacus/spartacus.module';
 import { ConfigModule, Config } from '@spartacus/core';
 import { UserAccountModule } from '@spartacus/user';
-import { ExtLoginComponent } from './loginExtension/extLogin.component';
 import { ExtLoginModule } from './loginExtension/extLogin.module';
+import { RegisterComponentModule } from '@spartacus/storefront';
+import { ExtRegisterModule } from './registerExtension/extRegister.module';
 export abstract class DebugConfig {
   logConfig: boolean;
 }
@@ -31,7 +32,9 @@ export abstract class DebugConfig {
     } as DebugConfig
     ),
     UserAccountModule,
-    ExtLoginModule
+    RegisterComponentModule,
+    ExtLoginModule,
+    ExtRegisterModule
   ],
   providers: [{ provide: DebugConfig, useExisting: Config }
   ],
