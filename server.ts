@@ -9,7 +9,9 @@ import { AppServerModule } from './src/main.server';
 import { APP_BASE_HREF } from '@angular/common';
 import { existsSync } from 'fs';
 
-const ngExpressEngine = NgExpressEngineDecorator.get(engine, { timeout: 3000000, debug: true, concurrency: 10 });
+const ngExpressEngine = NgExpressEngineDecorator.get(engine, { timeout: 7000, debug: true, concurrency: 2, 
+  forcedSsrTimeout:10000,
+  maxRenderTime:12000 });
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app() {

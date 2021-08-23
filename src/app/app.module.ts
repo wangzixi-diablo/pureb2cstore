@@ -31,8 +31,8 @@ export abstract class DebugConfig {
       logConfig: true
     } as DebugConfig
     ),
-    /*UserAccountModule,
-    RegisterComponentModule,
+    UserAccountModule,
+    /*RegisterComponentModule,
     ExtLoginModule,
     ExtRegisterModule*/
   ],
