@@ -31,10 +31,10 @@ export abstract class DebugConfig {
       logConfig: true
     } as DebugConfig
     ),
-    UserAccountModule,
+    /*UserAccountModule,
     RegisterComponentModule,
     ExtLoginModule,
-    ExtRegisterModule
+    ExtRegisterModule*/
   ],
   providers: [{ provide: DebugConfig, useExisting: Config }
   ],
