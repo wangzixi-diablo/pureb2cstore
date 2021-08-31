@@ -42,7 +42,7 @@ export abstract class DebugConfig {
 })
 export class AppModule { 
   constructor(private config: DebugConfig){
-    console.log('Jerry config: ', this.config);
+    // console.log('Jerry config: ', this.config);
   }
 
 }

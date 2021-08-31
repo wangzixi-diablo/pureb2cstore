@@ -5,12 +5,12 @@ import { defaultCmsContentProviders, layoutConfig, mediaConfig } from "@spartacu
 
 const result = provideConfig(layoutConfig);
 
-console.log('Jerry: ', result);
+// console.log('Jerry: ', result);
 
 //result.useValue.layoutSlots.header.lg.slots = [];
 
 function getConfigu(){
-  console.log('Ethan2');
+  // console.log('Ethan2');
   return 'cms/pages';
 }
 @NgModule({

@@ -1,7 +1,7 @@
 import 'zone.js/dist/zone-node';
 
 import { ngExpressEngine as engine } from '@nguniversal/express-engine';
-import { NgExpressEngineDecorator } from '@spartacus/setup/ssr';
+import { NgExpressEngineDecorator, RenderingStrategy } from '@spartacus/setup/ssr';
 import * as express from 'express';
 import { join } from 'path';
 
@@ -9,9 +9,13 @@ import { AppServerModule } from './src/main.server';
 import { APP_BASE_HREF } from '@angular/common';
 import { existsSync } from 'fs';
 
-const ngExpressEngine = NgExpressEngineDecorator.get(engine, { timeout: 7000, debug: true, concurrency: 2, 
-  forcedSsrTimeout:10000,
-  maxRenderTime:12000 });
+const ngExpressEngine = NgExpressEngineDecorator.get(engine, { timeout: 90000, concurrency: 1, 
+  forcedSsrTimeout:90000,
+  maxRenderTime:100000,
+  cache: true, cacheSize: 10,
+  renderingStrategyResolver: (req) => RenderingStrategy.DEFAULT});
+
+// const ngExpressEngine = NgExpressEngineDecorator.get(engine, null);
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app() {
