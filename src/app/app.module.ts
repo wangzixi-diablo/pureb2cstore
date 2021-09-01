@@ -9,8 +9,9 @@ import { SpartacusModule } from './spartacus/spartacus.module';
 import { ConfigModule, Config } from '@spartacus/core';
 import { UserAccountModule } from '@spartacus/user';
 import { ExtLoginModule } from './loginExtension/extLogin.module';
-import { RegisterComponentModule } from '@spartacus/storefront';
+import { RegisterComponentModule, CmsComponentsService } from '@spartacus/storefront';
 import { ExtRegisterModule } from './registerExtension/extRegister.module';
+import { ExtCmsComponentsService } from './serviceExtension/ext.cms-components.service';
 export abstract class DebugConfig {
   logConfig: boolean;
 }
@@ -36,7 +37,8 @@ export abstract class DebugConfig {
     ExtLoginModule,
     ExtRegisterModule*/
   ],
-  providers: [{ provide: DebugConfig, useExisting: Config }
+  providers: [{ provide: DebugConfig, useExisting: Config },
+              { provide: CmsComponentsService, useClass: ExtCmsComponentsService}
   ],
   bootstrap: [AppComponent]
 })
