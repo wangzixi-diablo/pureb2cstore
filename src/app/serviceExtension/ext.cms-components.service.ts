@@ -8,7 +8,7 @@ export class ExtCmsComponentsService extends CmsComponentsService
 {
     shouldRender(componentType: string): boolean {
         if( componentType === 'SimpleResponsiveBannerComponent'){
-            console.log('Jerry should NOT render:', componentType);
+            // console.log('Jerry should NOT render:', componentType);
             return false;
         }
         return super.shouldRender(componentType);
