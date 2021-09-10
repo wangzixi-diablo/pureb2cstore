@@ -8,10 +8,10 @@ import { AppComponent } from './app.component';
 import { SpartacusModule } from './spartacus/spartacus.module';
 import { ConfigModule, Config,  ActiveCartService, StateWithMultiCart, EventService } from '@spartacus/core';
 import { UserAccountModule } from '@spartacus/user';
-import { CmsComponentsService, PageEvent } from '@spartacus/storefront';
+import { CmsComponentsService, PageEvent, LayoutConfig } from '@spartacus/storefront';
 import { ExtCmsComponentsService } from './serviceExtension/ext.cms-components.service';
+import { CustProductReviewModule } from './prodReviewExtension/effect.module';
 
-import { ExtProductEffectModule } from './productEffect/effect.module';
 export abstract class DebugConfig {
   logConfig: boolean;
 }
@@ -33,7 +33,7 @@ export abstract class DebugConfig {
     } as DebugConfig
     ),
     UserAccountModule,
-    ExtProductEffectModule
+    CustProductReviewModule,
     /*RegisterComponentModule,
     ExtLoginModule,
     ExtRegisterModule*/
@@ -49,7 +49,7 @@ export class AppModule {
     private cartService: ActiveCartService,
     private store: Store<StateWithMultiCart>,
     private eventService: EventService){
-    // console.log('Jerry config: ', this.config);
+    console.log('Jerry config: ', this.config);
     /*const action = this.actions$.pipe(
       ofType(CartActions.LOAD_CART),
       map((action: CartActions.LoadCart) => action.payload),
